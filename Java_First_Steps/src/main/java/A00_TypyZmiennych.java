@@ -1,5 +1,5 @@
-public class A00_TypyZmiennych {
-    public static void main(String[] args) {
+public class A00_TypyZmiennych {                //ciało klasy
+    public static void main(String[] args) {    //ciało programu
 
         byte liczbaCalkowita;                   //zmienna o nazwie liczbaCałkowita typu byte [–128; 127]
         liczbaCalkowita = 3;                    //zmienna byte równa się 3
