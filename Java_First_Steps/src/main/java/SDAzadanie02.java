@@ -1,4 +1,4 @@
-public class SDAzadanie2 {
+public class SDAzadanie02 {
     public static void main(String[] args) {
     /*
     Napisz program, w którym zainicjalizujesz zmienne typu prymitywnego i przypiszesz do nich następujące wartości:

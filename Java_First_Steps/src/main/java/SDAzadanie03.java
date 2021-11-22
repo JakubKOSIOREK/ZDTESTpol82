@@ -1,4 +1,4 @@
-public class SDAzadanie3 {
+public class SDAzadanie03 {
     public static void main(String[] args) {
         /*
         Napisz program, w którym zainicjalizujesz zmienne typu
