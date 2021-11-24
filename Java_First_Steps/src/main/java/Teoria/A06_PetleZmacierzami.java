@@ -1,6 +1,6 @@
 package Teoria;
 
-public class A06_petleZmacierzami {
+public class A06_PetleZmacierzami {
     public static void main(String[] args) {
 
         int[][] macierz = new int[2][3];        // macierz dwuwymiarowa o wymiarach 2 wiersze na 3 kolumny (pusta)
