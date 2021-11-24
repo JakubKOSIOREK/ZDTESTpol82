@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A03_InstrukcjaWyboru {
     public static void main(String[] args) {
 

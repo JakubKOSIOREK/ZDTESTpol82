@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A06_petleZmacierzami {
     public static void main(String[] args) {
 

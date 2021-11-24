@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A02_InstrukcjeWarunkowe {
 
     public static void main(String[] args) {

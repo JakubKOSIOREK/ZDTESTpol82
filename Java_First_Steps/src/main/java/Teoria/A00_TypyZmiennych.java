@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A00_TypyZmiennych {                //ciało klasy
     public static void main(String[] args) {    //ciało programu
 

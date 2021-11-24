@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A05_PetleZtablicami {
     public static void main(String[] args) {
 

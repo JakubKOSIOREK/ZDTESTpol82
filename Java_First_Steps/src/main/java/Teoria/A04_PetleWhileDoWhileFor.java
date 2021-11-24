@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A04_PetleWhileDoWhileFor {
     public static void main(String[] args) {
 

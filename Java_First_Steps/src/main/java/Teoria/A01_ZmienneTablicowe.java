@@ -1,3 +1,5 @@
+package Teoria;
+
 public class A01_ZmienneTablicowe {
     public static void main(String[] args) {
 

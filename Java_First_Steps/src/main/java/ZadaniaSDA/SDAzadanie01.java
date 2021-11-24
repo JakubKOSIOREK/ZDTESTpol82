@@ -1,3 +1,5 @@
+package ZadaniaSDA;
+
 public class SDAzadanie01 {
     public static void main(String[] args) {
     /*
