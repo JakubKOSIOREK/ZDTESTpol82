@@ -83,5 +83,15 @@ public class LogowanieSteps {
         a następnie symulujemy naciśnięcie przez kursor metodą click()
         */
     }
-   
+    // THEN -> rezultat oczekiwany
+
+    @Then("Użytkownik został poprawnie zalogowany do aplikacji.")
+    public void correctLogin(){
+        Assert.assertEquals("https://the-internet.herokuapp.com/secure" , driver.getCurrentUrl());
+        /*
+        do potwierdzenia poprawnego logowania do aplikacji wykorzystano obiekt Assert z funkcją porównania
+        assertEquals() wewnątrz której umieszczamy wzorzec który zostanie porównany z wartością pobraną dzięki
+        webdriver-owi driver.getCurrentUrl()
+         */
+    }
 }
