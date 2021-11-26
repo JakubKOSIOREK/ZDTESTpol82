@@ -87,7 +87,7 @@ public class LogowanieSteps {
 
     @Then("Użytkownik został poprawnie zalogowany do aplikacji.")
     public void correctLogin(){
-        Assert.assertEquals("https://the-internet.herokuapp.com/secure" , driver.getCurrentUrl());
+        Assert.assertEquals("https://the-internet.herokuapp.com/secure2" , driver.getCurrentUrl());
         /*
         do potwierdzenia poprawnego logowania do aplikacji wykorzystano obiekt Assert z funkcją porównania
         assertEquals() wewnątrz której umieszczamy wzorzec który zostanie porównany z wartością pobraną dzięki
