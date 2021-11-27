@@ -2,7 +2,7 @@ package ZadaniaSDA;
 
 import java.util.Scanner;
 
-public class SDAzadanie12 {
+public class SDAzadanie12_petla_while {
     public static void main(String[] args) {
 
         /*
