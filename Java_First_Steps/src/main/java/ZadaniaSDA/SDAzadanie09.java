@@ -8,13 +8,12 @@ public class SDAzadanie09 {
          Gdzie X to numer wyświetlonego komunikatu.
          */
 
-        int x = 0;
+        System.out.println();
 
-        System.out.println("To jest Komunikat w pętli X");
-        while (x <= 4){
+        int x = 0;
+        while (x < 5){
             System.out.println("To jest "+ x + " komunikat w pętli.");
             x++;
         }
-
     }
 }
