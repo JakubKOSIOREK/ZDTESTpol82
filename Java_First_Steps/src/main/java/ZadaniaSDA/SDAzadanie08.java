@@ -21,11 +21,9 @@ public class SDAzadanie08 {
         Scanner readTemperature = new Scanner(System.in);
         System.out.println("Podaj temperaturę ");
         double temp = readTemperature.nextDouble();
-
+        System.out.println();
 
         // METODY -> tu wypisujemy metody do których będziemy się odwoływać
-
-        System.out.println();
 
         CelsjuszeNaFahrenheity(temp);
         FahrenheityNaCelsjusze(temp);
