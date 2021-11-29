@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(           // trzeba dodać żródła do testrunnera
         features = "src/test/java/Features",
-        glue = "StepDefinitions"
+        glue = "StepDefinitions",
+        tags = "@smokeTest"     // tu podajemy tagi z logowanie.feature or-> jakie tagi z różnych and-> jeden scenariusz z dwoma tagami
 )
 public class TestRunner {
 }
