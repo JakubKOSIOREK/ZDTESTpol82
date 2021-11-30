@@ -8,7 +8,7 @@ public class FirstTest {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver96.exe"); // step 1 podajemy sterownik do przeglądarki
         WebDriver driver = new ChromeDriver(); // step 2 dajemy konstruktor zmiennej driver -> otwiera przeglądarkę
 
-        String pageTitle = "";  // step 3 zmienna do tytułu strony głównej
+        String pageTitle;  // step 3 zmienna do tytułu strony głównej
         String url = "http://automationpractice.com/index.php"; // step 4 adres url strony którą sprawdzamy
         String expectedTitle = "My Store"; // step 5 wartość ze strony url
         driver.get(url); // otwiera stronę
