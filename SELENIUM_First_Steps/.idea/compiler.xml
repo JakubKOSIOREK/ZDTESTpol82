@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SELENIUM_First_Steps" />
+        <module name="Selenium_First_Steps" />
       </profile>
     </annotationProcessing>
   </component>
