@@ -12,7 +12,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-    
+
     <!-- DODAJEMY BIBLIOTEKI (pamiętać aby biblioteki były w miarę nowe) -->
     <dependencies>
         <dependency>
