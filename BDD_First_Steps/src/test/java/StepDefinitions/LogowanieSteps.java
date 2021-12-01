@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -45,7 +46,6 @@ public class LogowanieSteps {
     podłączenie źródła z pliku Logowanie.feature,
     nazwa w cudzysłowie musi być TAKA SAMA jak w pliku Logowanie.feature
     */
-
     public void userLogin() {
         /*
         do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
@@ -58,31 +58,24 @@ public class LogowanieSteps {
         */
         }
 
-    @When("Użytkownik wprowadza w pole PASSWORD poprawne hasło")
+    @And("Użytkownik wprowadza w pole PASSWORD poprawne hasło")
     public void userPassword(){
-        /*
-        do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
-        sposób w jaki chcemy wyszukać np. po id < By.id() >, po nazwie pola < By.name() > lub po xPath-u < By.xpath() >
-        */
-        driver.findElement(By.name("password")).sendKeys("SuperSecretPassword!");
+       driver.findElement(By.name("password")).sendKeys("SuperSecretPassword!");
         /*
         pole PASSWORD identyfikujemy po np. nazwie pola  znajdującym się w kodzie testowanej aplikacji
         < name="password" > następnie wysyłamy do tego pola poprawną wartość
         */
     }
 
-    @When("Użytkownik wybiera przycisk LOGIN i naciska")
+    @And("Użytkownik wybiera przycisk LOGIN i naciska")
     public void loginPushbutton(){
-    /*
-    do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
-    sposób w jaki chcemy wyszukać np. po id < By.id() >, po nazwie pola < By.name() > lub po xPath-u < By.xpath() >
-     */
         driver.findElement(By.xpath("//*[@id=\"login\"]/button")).click();
         /*
         przycisk logowania identyfikujemy po np. xPath-u  skopiowanym z fragmentu kodu testowanej aplikacji
         a następnie symulujemy naciśnięcie przez kursor metodą click()
         */
     }
+
     // THEN -> rezultat oczekiwany
 
     @Then("Użytkownik został poprawnie zalogowany do aplikacji")
@@ -93,5 +86,21 @@ public class LogowanieSteps {
         assertEquals() wewnątrz której umieszczamy wzorzec który zostanie porównany z wartością pobraną dzięki
         webdriver-owi driver.getCurrentUrl()
          */
+    }
+
+    
+    // Scenario: Niepoprawne logowanie do aplikacji - dodatkowe pola
+
+    @When("Użytkownik wprowadza w pole LOGIN niepoprawny login")
+    public void badUserLogin(){
+        driver.findElement(By.id("username")).sendKeys("johndoe");
+    }
+    @Then("Użytkownik nie został poprawnie zalogowany do aplikacji")
+    public void incorrectLogin() {
+        Assert.assertEquals("https://the-internet.herokuapp.com/login", driver.getCurrentUrl());
+    }
+    @And("Pojawił się komunikat o niepoprawnym loginie")
+    public void incorrectLoginAlert() {
+        Assert.assertEquals("Your username is invalid!\n" + "×", driver.findElement(By.id("flash")).getText());
     }
 }
