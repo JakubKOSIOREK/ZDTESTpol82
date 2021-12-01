@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(               // podłączamy źródła dla klasy TestRunner
 
         features = "src/test/java/Features",    // ścieżka do katalogu zawierającego historyjki użytkownika
-        glue = "StepDefinitions"                // ścieżka do katalogu zawierającego kroki Given->When->Then
+        glue = "StepDefinitions",               // ścieżka do katalogu zawierającego kroki Given->When->Then
+        tags = "@allTests"                      // funkcja uruchamiająca testy z wybranym tagiem
 )
 
 public class TestRunner {
