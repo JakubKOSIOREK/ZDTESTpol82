@@ -104,7 +104,7 @@ public class LogowanieSteps {
         Assert.assertEquals("Your username is invalid!\n" + "×", driver.findElement(By.id("flash")).getText());
     }
 
-    // Poprawne logowanie do aplikacji z wykorzystaniem parametrów
+    // Poprawne / Niepoprawne logowanie do aplikacji z wykorzystaniem parametrów
 
     @Given("Użytkownik jest na stronie {string}") //naszym parametrem jest adres url podany w scenariuszu jako string
     public void stronaLogowania(String url) {
