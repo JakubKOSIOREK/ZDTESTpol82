@@ -17,5 +17,5 @@ Feature: Logowanie do aplikacji
 
     Examples: tabela z danymi do testowania
       | username | password             |
-      | johndoe1 | SuperSecretPassword! |
+      | johndoe | SuperSecretPassword! |
       | janedoe  | SuperSecretPassword! |
