@@ -1,5 +1,7 @@
 package StepDefinitions;
 
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,26 +13,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LogowanieSteps {
 
-    WebDriver driver;                   // tworzymy pole driver jako zmienną web-ową
+    static WebDriver driver;  // tworzymy pole driver jako zmienną web-ową
 
-    // GIVEN -> preconditions -> warunki wstępne które muszą być spełnione
-
-    @Given("Użytkownik jest na stronie logowania")
-    /*
-    podłączenie źródła z pliku Logowanie.feature ,
-    nazwa w cudzysłowie musi być TAKA SAMA jak w pliku Logowanie.feature
-    */
-
-    public void stronaLogowania(){                      // metoda stronaLogowania dla warunku Given
+    @BeforeAll  // uruchomienie metod wspólnych dla wszystkich scenariuszy przed ich wykonaniem
+    public static void setUp(){
+        System.setProperty("webdriver.chrome.driver", "c://chromedriver//chromedriver96.exe"); // otwarcie okna przeglądarki
+        driver = new ChromeDriver();    // konstruktor uruchamiający nowe okno przeglądarki
         /*
         do otwarcia okna wybranej przeglądarki niezbędne jest posiadanie sterowników danej przeglądarki, tak zwanych
         webdriver-ów, bardzo WAŻNE jest to aby posiadać wersję sterowników zgodną z wersją przeglądarki którą używamy
-        do testowania aplikacji
+        do testowania aplikacji, setProperty("rodzaj webdriver-ów", "ścieżka do pliku <nazwa webdriver-a.exe>")
         */
-        System.setProperty("webdriver.chrome.driver", "c://chromedriver//chromedriver96.exe"); // otwarcie okna przeglądarki
-            // setProperty("rodzaj webdriver-ów"  , "dokładna ścierzka do pliku <nazwa>.exe");
+    }
 
-        driver = new ChromeDriver();    // konstruktor uruchamiający nowe okno przeglądarki
+    // Scenario: Poprawne logowanie do aplikacji
+
+    // GIVEN -> preconditions -> warunki wstępne które muszą być spełnione
+
+    // @Given("nazwa") -> nazwa musi być TAKA SAMA jak w pliku Logowanie.feature
+    @Given("Użytkownik jest na stronie logowania") // podłączenie źródła z pliku Logowanie.feature
+        public void stronaLogowania(){             // metoda stronaLogowania dla warunku Given
         driver.navigate().to("https://the-internet.herokuapp.com/login");
         /*
         do otwarcia aplikacji w oknie przeglądarki wykorzystujemy webdrivera navigate().to()
@@ -41,11 +43,8 @@ public class LogowanieSteps {
 
     // WHEN -> steps to do -> kroki do wykonania w teście
 
-    @When("Użytkownik wprowadza w pole LOGIN poprawny login")
-    /*
-    podłączenie źródła z pliku Logowanie.feature,
-    nazwa w cudzysłowie musi być TAKA SAMA jak w pliku Logowanie.feature
-    */
+    // @When("nazwa") -> nazwa musi być TAKA SAMA jak w pliku Logowanie.feature
+    @When("Użytkownik wprowadza w pole LOGIN poprawny login") // podłączenie źródła z pliku Logowanie.feature,
     public void userLogin() {
         /*
         do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
@@ -108,8 +107,6 @@ public class LogowanieSteps {
 
     @Given("Użytkownik jest na stronie {string}") //naszym parametrem jest adres url podany w scenariuszu jako string
     public void stronaLogowania(String url) {
-        System.setProperty("webdriver.chrome.driver", "c://chromedriver//chromedriver96.exe");
-        driver = new ChromeDriver();
         driver.navigate().to(url);
     }
     @When("Użytkownik wprowadza w pole LOGIN {string}") //naszym parametrem jest userName podany w scenariuszu jako string
@@ -123,12 +120,17 @@ public class LogowanieSteps {
 
     // Scenario: Niepoprawne logowanie do aplikacji z wykorzystaniem tabeli danych
 
-    @When("Użytkownik wprowadza w pole LOGIN (.+)$")
+    @When("Użytkownik wprowadza w pole LOGIN wartość (.+)$")
     public void usernameFromTabel(String username) {
         driver.findElement(By.id("username")).sendKeys((username));
     }
-    @And("Użytkownik wprowadza w pole PASSWORD (.+)$")
+    @And("Użytkownik wprowadza w pole PASSWORD wartość (.+)$")
     public void passwordFromTabel(String password) {
         driver.findElement(By.name("password")).sendKeys(password);
+    }
+
+    @AfterAll
+    public static void tearDown() { // uruchomienie metod wspólnych dla wszystkich scenariuszy po ich wykonaniu
+        driver.quit();
     }
 }
