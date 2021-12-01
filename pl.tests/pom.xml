@@ -17,19 +17,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>4.0.0</version>
+            <version>3.14.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.0.0</version>
+            <version>3.14.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>4.0.0</version>
+            <version>3.14.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-            <version>4.0.0</version>
+            <version>3.14.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
