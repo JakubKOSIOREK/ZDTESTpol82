@@ -120,4 +120,15 @@ public class LogowanieSteps {
     public void password(String password) {
         driver.findElement(By.name("password")).sendKeys(password);
     }
+
+    // Scenario: Niepoprawne logowanie do aplikacji z wykorzystaniem tabeli danych
+
+    @When("Użytkownik wprowadza w pole LOGIN (.+)$")
+    public void usernameFromTabel(String username) {
+        driver.findElement(By.id("username")).sendKeys((username));
+    }
+    @And("Użytkownik wprowadza w pole PASSWORD (.+)$")
+    public void passwordFromTabel(String password) {
+        driver.findElement(By.name("password")).sendKeys(password);
+    }
 }

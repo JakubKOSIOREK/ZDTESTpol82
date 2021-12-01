@@ -49,4 +49,3 @@ Feature: Logowanie do systemu
       | username | password             |
       | johndoe  | SuperSecretPassword! |
       | janedoe  | SuperSecretPassword! |
-    
