@@ -88,7 +88,7 @@ public class LogowanieSteps {
          */
     }
 
-    
+
     // Scenario: Niepoprawne logowanie do aplikacji - dodatkowe pola
 
     @When("Użytkownik wprowadza w pole LOGIN niepoprawny login")
