@@ -103,4 +103,21 @@ public class LogowanieSteps {
     public void incorrectLoginAlert() {
         Assert.assertEquals("Your username is invalid!\n" + "×", driver.findElement(By.id("flash")).getText());
     }
+
+    // Poprawne logowanie do aplikacji z wykorzystaniem parametrów
+
+    @Given("Użytkownik jest na stronie {string}") //naszym parametrem jest adres url podany w scenariuszu jako string
+    public void stronaLogowania(String url) {
+        System.setProperty("webdriver.chrome.driver", "c://chromedriver//chromedriver96.exe");
+        driver = new ChromeDriver();
+        driver.navigate().to(url);
+    }
+    @When("Użytkownik wprowadza w pole LOGIN {string}") //naszym parametrem jest userName podany w scenariuszu jako string
+    public void username(String username) {
+        driver.findElement(By.id("username")).sendKeys(username);
+    }
+    @When("Użytkownik wprowadza w pole PASSWORD {string}") //naszym parametrem jest password podany w scenariuszu jako string
+    public void password(String password) {
+        driver.findElement(By.name("password")).sendKeys(password);
+    }
 }
