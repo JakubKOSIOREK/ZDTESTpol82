@@ -11,9 +11,6 @@ public class LoginTest {
 
     private WebDriver driver;
     String url = "http://automationpractice.com/index.php?controller=authentication&back=my-account"; // adres strony logowania
-    private WebElement emailInput; // zmienna odnosząca się do Webelementu -> pole email
-    private WebElement passwordInput; // zmienna odnosząca się do Webelementu -> pole password
-    private WebElement singInButton; // zmienna odnosząca się do Webelementu -> przycisk Sing In
 
     @BeforeTest
     public void setUp(){
@@ -24,11 +21,14 @@ public class LoginTest {
     @Test // test dla isniejącego konta
     public void doLogin(){
         driver.get(url);
-        emailInput = driver.findElement(By.id("email"));
+        // zmienna odnosząca się do Webelementu -> pole email
+        WebElement emailInput = driver.findElement(By.id("email"));
         emailInput.sendKeys("poczta@poczta.pl"); // wprowadzamy login
-        passwordInput = driver.findElement(By.id("passwd"));
+        // zmienna odnosząca się do Webelementu -> pole password
+        WebElement passwordInput = driver.findElement(By.id("passwd"));
         passwordInput.sendKeys("password"); // wwprowadzamy hasło
-        singInButton = driver.findElement(By.id("SubmitLogin"));
+        // zmienna odnosząca się do Webelementu -> przycisk Sing In
+        WebElement singInButton = driver.findElement(By.id("SubmitLogin"));
         singInButton.click(); // symulujemy kliknięcie przycisku
         String title = driver.findElement(By.className("info-account")).getText(); // pobieramy napis ze strony
         System.out.println(title); // wyświetlenie w konsoli napisu

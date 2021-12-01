@@ -5,7 +5,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class A01_FirstTestRefactor {
+public class A02_FirstTestRefactor {
 
     // zmienne
     private WebDriver driver;                                   // definiujemy zmienną driver jako zmienną prywatną
@@ -33,7 +33,7 @@ public class A01_FirstTestRefactor {
         Assert.assertEquals(pageTitle, expectedTitle, "Tytuł strony się nie zgadza, sprawdź co poszło nie tak");
         /*
         metodą Assert.assertEquals(wartość pobrana , wzorzec , komunikat gdy błąd)
-        dokonujemy sprawdzenia czy otrzymaliśmy rezultat oczekiwany testu
+        dokonujemy sprawdzenia czy otrzymaliśmy oczekiwany rezultat testu
          */
     }
 
