@@ -35,3 +35,18 @@ Feature: Logowanie do systemu
     And     Użytkownik wybiera przycisk LOGIN i naciska
     Then    Użytkownik nie został poprawnie zalogowany do aplikacji
     And     Pojawił się komunikat o niepoprawnym loginie
+
+
+  Scenario: Niepoprawne logowanie do aplikacji z wykorzystaniem tabeli danych
+    Given   Użytkownik jest na stronie "https://the-internet.herokuapp.com/login"
+    When    Użytkownik wprowadza w pole LOGIN <username>
+    And     Użytkownik wprowadza w pole PASSWORD <password>
+    And     Użytkownik wybiera przycisk LOGIN i naciska
+    Then    Użytkownik nie został poprawnie zalogowany do aplikacji
+    And     Pojawił się komunikat o niepoprawnym loginie
+
+    Examples: Tabela z danymi do testowania
+      | username | password             |
+      | johndoe  | SuperSecretPassword! |
+      | janedoe  | SuperSecretPassword! |
+    
