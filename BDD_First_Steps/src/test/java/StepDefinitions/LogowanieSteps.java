@@ -14,7 +14,7 @@ public class LogowanieSteps {
 
     // GIVEN -> preconditions -> warunki wstępne które muszą być spełnione
 
-    @Given("Użytkownik jest na stronie logowania.")
+    @Given("Użytkownik jest na stronie logowania")
     /*
     podłączenie źródła z pliku Logowanie.feature ,
     nazwa w cudzysłowie musi być TAKA SAMA jak w pliku Logowanie.feature
@@ -40,7 +40,7 @@ public class LogowanieSteps {
 
     // WHEN -> steps to do -> kroki do wykonania w teście
 
-    @When("Użytkownik wprowadza w pole LOGIN poprawny login,")
+    @When("Użytkownik wprowadza w pole LOGIN poprawny login")
     /*
     podłączenie źródła z pliku Logowanie.feature,
     nazwa w cudzysłowie musi być TAKA SAMA jak w pliku Logowanie.feature
@@ -58,7 +58,7 @@ public class LogowanieSteps {
         */
         }
 
-    @When("Użytkownik wprowadza w pole PASSWORD poprawne hasło,")
+    @When("Użytkownik wprowadza w pole PASSWORD poprawne hasło")
     public void userPassword(){
         /*
         do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
@@ -71,7 +71,7 @@ public class LogowanieSteps {
         */
     }
 
-    @When("Użytkownik wybiera przycisk LOGIN i naciska.")
+    @When("Użytkownik wybiera przycisk LOGIN i naciska")
     public void loginPushbutton(){
     /*
     do zidentyfikowania pola w przeglądarce używamy metody findElement( ) w połączeniu z metodą By.X gdzie X oznacza
@@ -85,7 +85,7 @@ public class LogowanieSteps {
     }
     // THEN -> rezultat oczekiwany
 
-    @Then("Użytkownik został poprawnie zalogowany do aplikacji.")
+    @Then("Użytkownik został poprawnie zalogowany do aplikacji")
     public void correctLogin(){
         Assert.assertEquals("https://the-internet.herokuapp.com/secure" , driver.getCurrentUrl());
         /*
