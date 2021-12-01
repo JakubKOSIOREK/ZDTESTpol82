@@ -26,3 +26,12 @@ Feature: Logowanie do systemu
     And     Użytkownik wprowadza w pole PASSWORD "SuperSecretPassword!"
     And     Użytkownik wybiera przycisk LOGIN i naciska
     Then    Użytkownik został poprawnie zalogowany do aplikacji
+
+
+  Scenario: Niepoprawne logowanie do aplikacji z wykorzystaniem parametrów
+    Given   Użytkownik jest na stronie "https://the-internet.herokuapp.com/login"
+    When    Użytkownik wprowadza w pole LOGIN "johndoe"
+    And     Użytkownik wprowadza w pole PASSWORD "SuperSecretPassword!"
+    And     Użytkownik wybiera przycisk LOGIN i naciska
+    Then    Użytkownik nie został poprawnie zalogowany do aplikacji
+    And     Pojawił się komunikat o niepoprawnym loginie
