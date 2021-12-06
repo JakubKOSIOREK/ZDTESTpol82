@@ -12,16 +12,15 @@ import org.testng.annotations.Test;
 public class A04_WorningDisplayTest {
     /*
     przykładowy test mający na celu sprawdzenie, czy w razie wprowadzenia niepoprawnych danych wyskoczy okienko
-    ostrzegawcze
-    z odpowiednim komunikatem
+    ostrzegawcze z odpowiednim komunikatem
      */
 
     private WebDriver driver;                       // definiujemy zmienną driver jako zmienną prywatną
     String url = "http://automationpractice.com/index.php?controller=authentication&back=my-account"; // adres strony logowania
     String emailToSend = "poczta@poczta.pl";        // zmienna zawierająca adres email
-    WebElement emailInput; // zmienna odnosząca się do Webelementu
-    WebElement createAnAccountButton; // zmienna odnosząca się do Webelementu
-    boolean warning; // zmienna boolean
+    WebElement emailInput;                          // zmienna odnosząca się do Webelementu
+    WebElement createAnAccountButton;               // zmienna odnosząca się do Webelementu
+    boolean warning;                                // zmienna boolean
 
     @BeforeTest
     public void setUp(){
@@ -54,7 +53,7 @@ public class A04_WorningDisplayTest {
         poniewaź serwer musi przeszukać bazę danych czy już owych nie posiada w swoich zasobach
         */
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        // metoda mająca za zadanie wstrzymanie akcji
+        // metoda mająca za zadanie wstrzymanie akcji -> pauza
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("create_account_error"))));
        // warunek oczekiwania na odpowiedź z serwera -> tu do momentu aż wyskoczy na stronie okienko

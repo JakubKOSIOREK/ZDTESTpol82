@@ -36,7 +36,7 @@ public class A03_LoginTest {
         emailInput = driver.findElement(By.id("email"));            // konstruktor lokalizujący pole email w sekcji Sing In
         emailInput.sendKeys(emailToSend);                           // metoda wpisująca dane ze zmiennej emailToSend
         passwordInput = driver.findElement(By.id("passwd"));        // konstruktor lokalizujący pole password w sekcji Sing In
-        passwordInput.sendKeys(passwordToSend);          // metoda wpisująca dane ze zmiennej passwordToSend
+        passwordInput.sendKeys(passwordToSend);                     // metoda wpisująca dane ze zmiennej passwordToSend
         singInButton = driver.findElement(By.id("SubmitLogin"));    // konstruktor lokalizujący przycisk Sing In
         singInButton.click();                                       // metoda symulująca kliknięcie / naciścnięcie przycisku
         title = driver.findElement(By.className("info-account")).getText(); // pobieramy napis ze strony do zmiennej title
